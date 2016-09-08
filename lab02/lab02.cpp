@@ -14,46 +14,44 @@ int one()
     ofstream outfile("randomwords.txt");
 
     srand (time(0));
-    int wordnum, wordlen, letternum = 0;
+    int numberofwords, lengthofwords, numberofletters = 0;
     string alphabet = "abcdefghijklmnopqrstuvwxyz";
-    string word;
+    string wordline;
 
     cout << "enter the number of words: ";
-    cin >> wordnum;
+    cin >> numberofwords;
     cout << "enter the length of words: ";
-    cin >> wordlen;
+    cin >> lengthofwords;
 
-    string words[wordnum];
+    string wordarray[numberofwords];
 
     steady_clock timer;
     auto start = timer.now();
 
 
-    for (int j = 0; j < wordnum; j++)
+    for (int j = 0; j < numberofwords; j++)
     {
-        word = "";
-        for (int i = 0; i < wordlen; i++)
+        wordline = "";
+        for (int i = 0; i < lengthofwords; i++)
         {
-            letternum = rand() % 26;
-            word = word + alphabet[letternum];
+            numberofletters = rand() % 26;
+            wordline = wordline + alphabet[numberofletters];
         }
-
-        //cout << word << endl;
-        words[j] = word;
+        wordarray[j] = wordline;
     }
 
-    sort(words, words + sizeof words / sizeof words[0]);
-    for (int j = 0; j < wordnum; j++)
+    sort(wordarray, wordarray + sizeof wordarray / sizeof wordarray[0]);
+    for (int j = 0; j < numberofwords; j++)
     {
-        outfile << words[j] << endl;
+        outfile << wordarray[j] << endl;
     }
 
     outfile.close();
 
     auto end = timer.now();
 
-    duration<double> elapsed_seconds = end-start;
-    cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+    duration<double> elapsedseconds = end-start;
+    cout << "elapsed time: " << elapsedseconds.count() << "s\n";
 }
 
 int main()
