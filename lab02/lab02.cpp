@@ -9,7 +9,7 @@
 using namespace std;
 using namespace chrono;
 
-int one()
+int RandomWordGenorator()
 {
     ofstream outfile("randomwords.txt");
 
@@ -54,6 +54,6 @@ int one()
 
 int main()
 {
-one();
+RandomWordGenorator();
 }
 
