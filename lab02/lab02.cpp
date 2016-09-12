@@ -18,10 +18,8 @@ int one()
     string alphabet = "abcdefghijklmnopqrstuvwxyz";
     string wordline;
 
-    cout << "enter the number of words: ";
-    cin >> numberofwords;
-    cout << "enter the length of words: ";
-    cin >> lengthofwords;
+    numberofwords = 10;
+    lengthofwords = 10;
 
     string wordarray[numberofwords];
 
