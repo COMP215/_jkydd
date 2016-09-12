@@ -13,33 +13,33 @@ int RandomWordGenorator()
 {
     ofstream outfile("randomwords.txt");
     srand (time(0));
-    int numberofwords, lengthofwords, numberofletters = 0;
+    int number_of_words, length_of_words, number_of_letters = 0;
     string alphabet = "abcdefghijklmnopqrstuvwxyz";
-    string wordline;
-    numberofwords = 10;
-    lengthofwords = 10;
-    string wordarray[numberofwords];
+    string word_line;
+    number_of_words = 10;
+    length_of_words = 10;
+    string word_array[number_of_words];
     steady_clock timer;
     auto start = timer.now();
-    for (int j = 0; j < numberofwords; j++)
+    for (int j = 0; j < number_of_words; j++)
     {
-        wordline = "";
-        for (int i = 0; i < lengthofwords; i++)
+        word_line = "";
+        for (int i = 0; i < length_of_words; i++)
         {
-            numberofletters = rand() % 26;
-            wordline = wordline + alphabet[numberofletters];
+            number_of_letters = rand() % 26;
+            word_line = word_line + alphabet[number_of_letters];
         }
-        wordarray[j] = wordline;
+        word_array[j] = word_line;
     }
-    sort(wordarray, wordarray + sizeof wordarray / sizeof wordarray[0]);
-    for (int j = 0; j < numberofwords; j++)
+    sort(word_array, word_array + sizeof word_array / sizeof word_array[0]);
+    for (int j = 0; j < number_of_words; j++)
     {
-        outfile << wordarray[j] << endl;
+        outfile << word_array[j] << endl;
     }
     outfile.close();
     auto end = timer.now();
-    duration<double> elapsedseconds = end-start;
-    cout << "elapsed time: " << elapsedseconds.count() << "s\n";
+    duration<double> elapsed_seconds = end-start;
+    cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
 }
 
 int main()
