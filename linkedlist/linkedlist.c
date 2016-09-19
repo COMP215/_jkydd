@@ -1,55 +1,44 @@
 #include <iostream>
 #include <string>
 #include <regex>
-//#include "Tree.h"
+#include "LinkedList.h"
 
 using namespace std;
 class Node
 {
     public:
         int num;
-        Node* left = NULL;
-        Node* right = NULL;
-        Node* root = NULL;
+        Node* next = NULL;
         Node();
         Node(int num);
-        Node(int num, Node* left, Node* right);
+        Node(int num, Node* next);
 };
 
 Node::Node(int num)
 {
     this->num = num;
 }
-Node::Node(int num, Node* left, Node* right)
+Node::Node(int num, Node* next)
 {
     this->num = num;
-    this->left = left;
-    this->right = right;
+    this->next = next;
 }
 
-class Tree
+class LinkedList
 {
     public:
         Node* buffer_ = new Node(NULL);
         Node* tail_ = buffer_;
         void add(int to_add);
-        //void add(int where_to, int to_add);
+        void add(int where_to, int to_add);
         void print();
 };
-void Tree::add(int to_add)
+void LinkedList::add(int to_add)
 {
-    if (tail_->left = NULL)
-    {
-        tail_->left = new Node(to_add);
-        tail_ = tail_->left;
-    }
-    else
-    {
-        tail_->right = new Node(to_add);
-        tail_ = tail_->right;
-    }
+    tail_->next = new Node(to_add);
+    tail_ = tail_->next;
 }
-/*void Tree::add(int where_to, int to_add)
+void LinkedList::add(int where_to, int to_add)
 {
     Node* foo = buffer_;
     for(int i = 0; i < where_to; i++)
@@ -61,15 +50,22 @@ void Tree::add(int to_add)
     {
         tail_ = foo;
     }
-}*/
-void Tree::print()
+}
+void LinkedList::print()
 {
-
+    Node* printing_node = buffer_->next;
+    cout << "There were ";
+    while(printing_node->next != tail_)
+    {
+        cout << printing_node->num << ", ";
+        printing_node = printing_node->next;
+    }
+    cout << "and " << printing_node->num << " in the list." << endl;
 }
 
 int main()
 {
-    Tree Foo;
+    LinkedList Foo;
     int user_in = 1;
     while(1)
     {
@@ -79,6 +75,5 @@ int main()
             break;
         Foo.add(user_in);
     }
-    //Foo.print();
-
+    Foo.print();
 }
