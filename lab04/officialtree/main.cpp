@@ -16,8 +16,6 @@ Node::Node(string data)
     left_ = NULL;
     right_ = NULL;
 }
-
-
 class BinarySearchTree
 {
 public:
