@@ -3,10 +3,10 @@ using namespace std;
 
 class Node
 {
+public:
     string data_;
     Node* left_;
     Node* right_;
-public:
     Node(string);
 };
 
@@ -17,10 +17,11 @@ Node::Node(string data)
     right_ = NULL;
 }
 
+
 class BinarySearchTree
 {
-    Node* root_;
 public:
+    Node* root_;
     BinarySearchTree();
     bool Insert(string data);
     void InOrder();
@@ -38,6 +39,18 @@ bool BinarySearchTree::Insert(string data)
         root_ = new Node(data);
         return true;
     }
+    else if (data < root_->data_)
+    {
+        root_->left_;
+        Insert(data);
+        return true;
+    }
+    else
+    {
+        root_->right_;
+        Insert(data);
+        return true;
+    }
     return false;
 }
 
@@ -45,5 +58,6 @@ int Main()
 {
     BinarySearchTree* people_names = new BinarySearchTree();
     people_names->Insert("gousie");
+    people_names->Insert("kydd");
     people_names->Insert("armstrong");
 }
