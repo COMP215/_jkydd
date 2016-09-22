@@ -11,15 +11,15 @@
 
 #include <stdio.h>
 #include <string>
-
+using namespace std;
 class BSTNode {
 public:
-    std::string data_;
+    string data_;
     BSTNode* left_;
     BSTNode* right_;
 
 public:
-   BSTNode(std::string);
+   BSTNode(string);
 };
 
 
@@ -28,9 +28,12 @@ class BinarySearchTree {
 
 public:
     BinarySearchTree();
-    bool Insert(std::string);
-    bool Search(std::string);
-    bool Delete(std::string);
+    Print();
+    void InOrder();
+    void InOrder(BSTNode*);
+    bool Insert(string);
+    bool Search(string);
+    bool Delete(string);
 };
 
 #endif /* binarysearchtree_hpp */

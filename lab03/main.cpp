@@ -49,7 +49,7 @@ void Tree::add(int to_add)
         tail_ = tail_->right;
     }
 }
-/*void Tree::add(int where_to, int to_add)
+void Tree::add(int where_to, int to_add)
 {
     Node* foo = buffer_;
     for(int i = 0; i < where_to; i++)
@@ -61,10 +61,20 @@ void Tree::add(int to_add)
     {
         tail_ = foo;
     }
-}*/
+}
 void Tree::print()
 {
-
+    Node* foo = buffer_;
+    while (foo->root != NULL)
+    {
+        cout << foo->num << endl;
+        foo->root = foo->left;
+    }
+    while (foo->root != NULL)
+    {
+        cout << foo->num << endl;
+        foo->root = foo->right;
+    }
 }
 
 int main()
@@ -79,6 +89,6 @@ int main()
             break;
         Foo.add(user_in);
     }
-    //Foo.print();
+    Foo.print();
 
 }

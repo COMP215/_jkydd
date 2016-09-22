@@ -9,7 +9,8 @@
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
-            "environment": []
+            "environment": [],
+            "miDebuggerPath": "c:\\mingw\\bin\\gdb.exe",
         },
         {
             "name": "C++ Attach (Windows)",

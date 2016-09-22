@@ -7,7 +7,8 @@
 //
 
 #include "binarysearchtree.hpp"
-#include <string>
+
+#include <iostream>
 using namespace std;
 
 BSTNode::BSTNode(string data) {
@@ -52,4 +53,84 @@ bool BinarySearchTree::Insert(string data) {
         }
     }
     return false;
+}
+BinarySearchTree::Print()
+{
+    BSTNode* curr = root_;
+    while(curr != NULL)
+    {
+        cout << curr->data_ << endl;
+        curr = curr->left_;
+    }
+    curr = root_;
+    while(curr != NULL)
+    {
+        cout << curr->data_ << endl;
+        curr = curr->right_;
+    }
+    if(curr == NULL)
+    {
+        cout << "nothing in tree" << endl;
+    }
+}
+
+bool BinarySearchTree::Search(string data)
+{
+    if (root_ == NULL) {
+        cout << "nothing in tree";
+        return false;
+    } else {
+        BSTNode* curr = root_;
+        while (curr != NULL)
+        {
+            cout << "loop" << endl;
+            if (data < curr->data_) {
+                cout << "left" << endl;
+                curr = curr->left_;
+                if (data == curr->data_){
+                    cout << "true";
+                    return true;
+                }
+                else if (curr == NULL) {
+                    cout << "false";
+                    return false;
+                }
+            } else {
+                cout << "right" << endl;
+                curr = curr->right_;
+                if (data == curr->data_){
+                    cout << "true";
+                    return true;
+                }
+                else if (curr == NULL) {
+                    cout << "false";
+                    return false;
+                }
+            }
+        }
+        cout << "true";
+        return true;
+        }
+    }
+
+
+void BinarySearchTree::InOrder()
+{
+    if (root_ != NULL)
+    {
+       InOrder(root_);
+    }
+}
+
+void BinarySearchTree::InOrder(BSTNode* node)
+{
+    cout << node->data_ << endl;
+    if (node->left_ != NULL)
+    {
+        InOrder(node->left_);
+    }
+    if (node->right_ != NULL)
+    {
+        InOrder(node->right_);
+    }
 }
