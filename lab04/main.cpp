@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include "binarysearchtree.hpp"
 #include "LinkedList.h"
 
@@ -26,9 +27,13 @@ int main() {
     people_names->Search("decost");
     //people_names->InOrder();
     //people_names->Print();
-    //LinkedList Foo;
-    //Foo.Insert("evan");
-    //Foo.print();
-
+    ifstream fin;
+    string the_word;
+    fin.open("words.txt");
+    while (!fin.eof()){
+        getline(fin,the_word);
+        people_names->Insert(the_word);
+    }
+    people_names->InOrder();
     return 0;
 }

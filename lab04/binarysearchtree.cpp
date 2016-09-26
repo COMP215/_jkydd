@@ -81,34 +81,26 @@ bool BinarySearchTree::Search(string data)
         return false;
     } else {
         BSTNode* curr = root_;
-        while (curr != NULL)
+        while (curr->data_ != data)
         {
             cout << "loop" << endl;
             if (data < curr->data_) {
                 cout << "left" << endl;
                 curr = curr->left_;
-                if (data == curr->data_){
-                    cout << "true";
-                    return true;
-                }
-                else if (curr == NULL) {
-                    cout << "false";
+                if (curr == NULL){
+                    cout << "entry not found" << endl;
                     return false;
                 }
             } else {
                 cout << "right" << endl;
                 curr = curr->right_;
-                if (data == curr->data_){
-                    cout << "true";
-                    return true;
-                }
-                else if (curr == NULL) {
-                    cout << "false";
+                if (curr == NULL){
+                    cout << "entry not found" << endl;
                     return false;
                 }
             }
         }
-        cout << "true";
+        cout << "found: " << curr->data_ << endl;
         return true;
         }
     }

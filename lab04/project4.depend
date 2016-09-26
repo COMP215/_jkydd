@@ -1,23 +1,24 @@
 # depslib dependency file v1.0
-1474407148 source:c:\users\computer\desktop\algorithms\_jkydd\lab04\binarysearchtree.cpp
+1474926135 source:c:\users\computer\desktop\algorithms\_jkydd\lab04\binarysearchtree.cpp
 	"binarysearchtree.hpp"
-	<string>
+	<iostream>
 
-1474407148 c:\users\computer\desktop\algorithms\_jkydd\lab04\binarysearchtree.hpp
+1474492104 c:\users\computer\desktop\algorithms\_jkydd\lab04\binarysearchtree.hpp
 	<stdio.h>
 	<string>
 
-1474407148 source:c:\users\computer\desktop\algorithms\_jkydd\lab04\linkedlist.cc
+1474485416 source:c:\users\computer\desktop\algorithms\_jkydd\lab04\linkedlist.cc
 	<iostream>
 	<string>
 	<regex>
 
-1474407148 source:c:\users\computer\desktop\algorithms\_jkydd\lab04\main.cpp
+1474925790 source:c:\users\computer\desktop\algorithms\_jkydd\lab04\main.cpp
 	<iostream>
+	<fstream>
 	"binarysearchtree.hpp"
 	"LinkedList.h"
 
-1474407148 c:\users\computer\desktop\algorithms\_jkydd\lab04\linkedlist.h
+1474484967 c:\users\computer\desktop\algorithms\_jkydd\lab04\linkedlist.h
 
 1474494173 source:c:\users\computer\desktop\algorithms\_jkydd\lab04\project4\binarysearchtree.cpp
 	"binarysearchtree.hpp"
