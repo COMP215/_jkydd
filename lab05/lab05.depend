@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1475098546 source:c:\users\computer\desktop\algorithms\_jkydd\lab05\graph.cpp
+	"graph.h"
+	<vector>
+	<iostream>
+
+1475099553 c:\users\computer\desktop\algorithms\_jkydd\lab05\graph.h
+	<vector>
+	<iostream>
+
+1446671344 source:c:\users\computer\desktop\algorithms\_jkydd\lab05\main.cpp
+	<iostream>
+

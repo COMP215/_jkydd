@@ -83,19 +83,16 @@ bool BinarySearchTree::Search(string data)
         BSTNode* curr = root_;
         while (curr->data_ != data)
         {
-            cout << "loop" << endl;
             if (data < curr->data_) {
-                cout << "left" << endl;
                 curr = curr->left_;
                 if (curr == NULL){
-                    cout << "entry not found" << endl;
+                    cout << "data not found" << endl;
                     return false;
                 }
             } else {
-                cout << "right" << endl;
                 curr = curr->right_;
                 if (curr == NULL){
-                    cout << "entry not found" << endl;
+                    cout << "data not found" << endl;
                     return false;
                 }
             }
