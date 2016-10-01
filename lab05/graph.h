@@ -3,19 +3,11 @@
 
 using namespace std;
 
-
 class Vertex
     {
         Vertex(string data_);
         string data_;
-        vector<Edge> edges;
-    };
-
-class Edge
-    {
-        Edge();
-        Vertex* origin_;
-        Vertex* destination_;
+        vector<Vertex*> edges;
     };
 
 class Graph
