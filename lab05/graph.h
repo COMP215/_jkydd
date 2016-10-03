@@ -19,4 +19,6 @@ class Graph
             void addVertex(string name);
             bool IsBipartite();
             vector<Vertex> vertices;
+            vector<Vertex> bipartite1;
+            vector<Vertex> bipartite2;
     };
