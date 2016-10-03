@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1475098546 source:c:\users\computer\desktop\algorithms\_jkydd\lab05\graph.cpp
+1475468759 source:c:\users\computer\desktop\algorithms\_jkydd\lab05\graph.cpp
 	"graph.h"
 	<vector>
 	<iostream>
 
-1475099553 c:\users\computer\desktop\algorithms\_jkydd\lab05\graph.h
+1475469650 c:\users\computer\desktop\algorithms\_jkydd\lab05\graph.h
 	<vector>
 	<iostream>
 

@@ -3,13 +3,13 @@
 #include <iostream>
 
 using namespace std;
-
-Vertex::Vertex(string data_)
-    {
-        this->data = data_;
-    };
+Vertex::Vertex(string data)
+{
+    data_ = data;
+    vector<Vertex*> edges;
+};
 
 Graph::Graph()
     {
-        this->
+        addVertex()
     };

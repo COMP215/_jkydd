@@ -3,17 +3,25 @@
 
 using namespace std;
 
+class Edge
+{
+    Vertex* origin_;
+    vertex* destination_;
+};
+
 class Vertex
     {
-        Vertex(string data_);
-        string data_;
-        vector<Vertex*> edges;
+        public:
+            string data_;
+            Vertex(string);
+            vector<Edge> edges;
     };
 
 class Graph
     {
-        Graph();
-        vector<Vertex*> vertices;
-        addVertex(string data);
-        bool IsBipartite();
+        public:
+            Graph();
+            void addVertex(string data);
+            bool IsBipartite();
+            vector<Vertex*> vertices;
     };
