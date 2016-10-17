@@ -6,10 +6,11 @@ class Node
     {
         public:
         string name_;
+        int weight_;
         vector <Node> edges;
         Node();
         Node(string passed_name);
-        void addEdges(Node* newEdge);
+        void addEdge(Node* newEdge);
     };
 
 
@@ -17,7 +18,10 @@ class Graph
     {
         public:
         Graph();
-        void addToGraph(string vertex,string edge);
-        void print_to_file(string file_name);
+        void AddVertex(string vertex_name);
+        void AddEdge(string source, string target, int weight);
+        void addToGraph(string vertex_name, string edge,int weight);
+        void ToGraphviz(string file_name);
+        Node* SearchGraph(string vertex_name);
         vector <Node> vertices;
     };

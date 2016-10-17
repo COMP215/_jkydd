@@ -11,5 +11,6 @@ int main()
     mygraph.addToGraph("d","g");
     mygraph.addToGraph("c","b");
     mygraph.addToGraph("a","g");
-    mygraph.print_to_file("graph1.dot");
+    mygraph.AddEdge("a","b",9);
+    mygraph.ToGraphviz("graph1.dot");
 }
