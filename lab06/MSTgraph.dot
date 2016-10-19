@@ -1,0 +1,6 @@
+graph G {
+a--k [label="4"]
+j--l [label="7"]
+k--j [label="9"]
+l--a [label="12"]
+}

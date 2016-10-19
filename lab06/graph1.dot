@@ -1,2 +1,9 @@
 graph G {
+s--a 9
+s--c 5
+a--c 2
+a--b 1
+b--c 9
+b--d 6
+c--d 4
 }

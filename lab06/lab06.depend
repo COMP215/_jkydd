@@ -13,17 +13,18 @@
 	<iostream>
 	"graph.h"
 
-1476679057 source:c:\users\computer\desktop\algorithms\_jkydd\lab06\graph.cpp
+1476909961 source:c:\users\computer\desktop\algorithms\_jkydd\lab06\graph.cpp
 	"graph.h"
 	<vector>
 	<iostream>
 	<fstream>
+	<algorithm>
 
-1476679542 c:\users\computer\desktop\algorithms\_jkydd\lab06\graph.h
+1476913334 c:\users\computer\desktop\algorithms\_jkydd\lab06\graph.h
 	<vector>
 	<iostream>
 
-1476678365 source:c:\users\computer\desktop\algorithms\_jkydd\lab06\main.cpp
+1476909656 source:c:\users\computer\desktop\algorithms\_jkydd\lab06\main.cpp
 	<iostream>
 	"graph.h"
 
