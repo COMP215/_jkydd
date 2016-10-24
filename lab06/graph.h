@@ -34,10 +34,11 @@ class Graph
         void addToGraph(string vertex_name, string edge,int weight);
         void ToGraphviz(string file_name);
         void MSTToGraphviz(string file_name);
+        void isBipartite();
         void PrimMST();
         void KruskalMST();
         vector <Node> vertices;
-        vector <Node> justVertices;
-        vector <Node> usedVertices;
+        vector <Node> open;
+        vector <Node> closed;
         vector <Edge> allEdges;
     };

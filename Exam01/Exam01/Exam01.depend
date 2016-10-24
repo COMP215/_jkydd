@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1477347943 source:c:\users\computer\desktop\algorithms\_jkydd\exam01\exam01\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<algorithm>
+

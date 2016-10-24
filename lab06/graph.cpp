@@ -146,6 +146,14 @@ bool Graph::SearchGraphBool(string vertex_name)
         }
     return false;
 }
+void Graph::isBipartite()
+{
+    while(!open.empty())
+    {
+        if (open.empty())
+    }
+
+}
 
 /*void Graph::PrimMST()
 {
@@ -157,7 +165,7 @@ bool Graph::SearchGraphBool(string vertex_name)
     //add smallest edge to mst
     //edge connects to a so add a to closed list
     //move to a in closed list
-    // look through all edges connected to a--c except a--c and add smallest edge to mst and end of edge to closed list
+    //look through all edges connected to a--c except a--c and add smallest edge to mst and end of edge to closed list
 
 }*/
 
