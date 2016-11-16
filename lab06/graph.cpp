@@ -26,6 +26,7 @@ bool sortByWeight(const Edge &lhs, const Edge &rhs)
 {
     return lhs.weight_ < rhs.weight_;
 }
+
 Graph::Graph()
 {
     vertices = {};
@@ -42,7 +43,8 @@ void Graph::AddVertex(string vertex_name)
     Node* vertexNode = new Node;
     vertexNode->name_ = vertex_name;
     vertices.push_back(*vertexNode);
-    justVertices.push_back(*vertexNode);
+    open.push_back(*vertexNode);
+    //justVertices.push_back(*vertexNode);
 }
 
 void Graph::AddEdge(string source, string target, int weight)
@@ -50,6 +52,7 @@ void Graph::AddEdge(string source, string target, int weight)
     Edge* newEdge = new Edge(source,target,weight);
     vertices[SearchGraph(source)].edges.push_back(*newEdge);
     allEdges.push_back(*newEdge);
+    open[SearchGraph(source)].edges.push_back(*newEdge);
 }
 
 /*void Graph::addToGraph(string vertex_name, string edge, int weight)
@@ -107,7 +110,7 @@ void Graph::ToGraphviz(string file_name)
     outfile.close();
 }
 
-void Graph::MSTToGraphviz(string file_name)
+/*void Graph::MSTToGraphviz(string file_name)
 {
     ofstream outfile;
     outfile.open(file_name);
@@ -122,7 +125,7 @@ void Graph::MSTToGraphviz(string file_name)
     }
     outfile << "}";
     outfile.close();
-}
+}*/
 
 int Graph::SearchGraph(string vertex_name)
 {
@@ -131,6 +134,17 @@ int Graph::SearchGraph(string vertex_name)
             if(vertex_name == vertices[i].name_)
             {
                 return i;
+            }
+        }
+}
+
+Node* Graph::SearchGraphNode(string vertex_name)
+{
+    for(int i = 0; i<vertices.size(); i++)
+        {
+            if(vertex_name == vertices[i].name_)
+            {
+                return Node* vertices[i];
             }
         }
 }
@@ -146,6 +160,7 @@ bool Graph::SearchGraphBool(string vertex_name)
         }
     return false;
 }
+
 void Graph::isBipartite()
 {
     while(!open.empty())
@@ -155,9 +170,26 @@ void Graph::isBipartite()
 
 }
 
-/*void Graph::PrimMST()
+void Graph::PrimMST()
 {
+    int i = 0;
     //start at a node
+    while(!open.empty())
+    {
+        int i++;
+        closed.push_back(open[i]);//add vertex to closed list
+        Edge* smallestedge = open[i].edges.end();//find smallest edge
+        for (int y = 0; y<open[i].edges.size(); y++)
+        {
+            if (open[i].edges[y].weight_ < smallestedge.weight_)
+                smallestedge = open[i].edges[y];
+        }
+        if (!searchclosed(smallestedge.target_));//if node is not already on closed list
+        closed[i].edges.push_back(smallestedge);//add smallest edge to vertex in closed list
+        closed.push_back(SearchGraphNode(closed[i].edges[0].target_));//find end of edge and add to closed list
+        open.erase(open[i]); //delete first edge
+        open.erase((SearchGraph(closed[i].edges[0].target_));
+    }
     //list all connections
     //closed list = c
     //open list = s,a,b  d
@@ -166,10 +198,9 @@ void Graph::isBipartite()
     //edge connects to a so add a to closed list
     //move to a in closed list
     //look through all edges connected to a--c except a--c and add smallest edge to mst and end of edge to closed list
+}
 
-}*/
-
-void Graph::KruskalMST()
+/*void Graph::KruskalMST()
 {
     //create justVertices with no edges
     //cout << allEdges[0].weight_ << endl;
@@ -185,7 +216,7 @@ void Graph::KruskalMST()
         //num of edges = num of vertices -1
     }
 
-}
+}*/
 
 /*void Graph::Dihjstras
 {

@@ -24,6 +24,7 @@ int main()
     mygraph.AddEdge("b","d",6);
     mygraph.AddEdge("c","d",4);
     mygraph.ToGraphviz("graph1.dot");
-    //mygraph.KruskalMST();
+    //mygraph.PrimMST();
+    mygraph.KruskalMST();
     //mygraph.MSTToGraphviz("MSTgraph.dot");
 }

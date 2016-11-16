@@ -29,6 +29,7 @@ class Graph
         Graph();
         int SearchGraph(string vertex_name);
         bool SearchGraphBool(string vertex_name);
+        Node* SearchGraphNode(string vertex_name);
         void AddVertex(string vertex_name);
         void AddEdge(string source, string target, int weight);
         void addToGraph(string vertex_name, string edge,int weight);
