@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1481749562 source:c:\users\computer\desktop\algorithms\_jkydd\finalproject\main.cpp
+1481755413 source:c:\users\computer\desktop\algorithms\_jkydd\finalproject\main.cpp
 	<iostream>
 	<string>
+	<array>
 
